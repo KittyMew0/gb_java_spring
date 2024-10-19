@@ -1,0 +1,19 @@
+task build(type: Build) {
+  sourceCompatibility = JavaVersion.VERSION_17
+  archivesBaseName = 'java_gradle' 
+  plugins {
+    id 'java'
+  }
+  repositories {
+    mavenCentral() 
+  }
+  compileJava {
+    sourceCompatibility = sourceCompatibility
+    targetCompatibility = sourceCompatibility
+  }
+  jar {
+    manifest {
+      attributes 'Main-Class': 'Main' 
+    }
+  }
+}
